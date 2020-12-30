@@ -1,0 +1,15 @@
+{
+    "name": "cex/joefrost-plugin",
+    "description": "plugin test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Joe Frost",
+            "email": "design@joefrost.co.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
