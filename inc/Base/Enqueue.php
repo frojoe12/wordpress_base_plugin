@@ -6,7 +6,9 @@
 
 namespace Inc\Base;
 
-class Enqueue {
+use \Inc\Base\BaseController;
+
+class Enqueue extends BaseController {
 
     public function register() {
         add_action('admin_enqueue_scripts', [$this, 'enqueue_admin']);
@@ -16,13 +18,13 @@ class Enqueue {
 
     function enqueue_admin() {
         // enqueue all scripts admin pages
-        wp_enqueue_style('mypluginstyle', JOEFROST_PLUGIN_URL . 'assets/admin-style.css');
-        wp_enqueue_script('mypluginscript',  JOEFROST_PLUGIN_URL . 'assets/admin-script.js');
+        wp_enqueue_style('mypluginstyle', $this->plugin_url . 'assets/admin-style.css');
+        wp_enqueue_script('mypluginscript',  $this->plugin_url . 'assets/admin-script.js');
     }
     function enqueue_wp() {
         // enqueue all scripts non-admin pages
-        wp_enqueue_style('mypluginstyle',  JOEFROST_PLUGIN_URL . 'assets/wp-style.css');
-        wp_enqueue_script('mypluginscript',  JOEFROST_PLUGIN_URL . 'assets/wp-script.js');
+        wp_enqueue_style('mypluginstyle',  $this->plugin_url . 'assets/wp-style.css');
+        wp_enqueue_script('mypluginscript',  $this->plugin_url . 'assets/wp-script.js');
     }
 
 }

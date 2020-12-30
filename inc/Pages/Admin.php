@@ -6,7 +6,9 @@
 
 namespace Inc\Pages;
 
-class Admin {
+use \Inc\Base\BaseController;
+
+class Admin extends BaseController {
 
     public function register() {
         add_action('admin_menu',[$this,'add_admin_pages']);
@@ -17,7 +19,7 @@ class Admin {
     }
 
     public function admin_index() {
-        require_once JOEFROST_PLUGIN_PATH . 'templates/admin.php';
+        require_once $this->plugin_path . 'templates/admin.php';
     }
     
 }
