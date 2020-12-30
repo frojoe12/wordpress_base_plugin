@@ -27,7 +27,7 @@ class Admin extends BaseController {
                 'callback' => function() {echo '<h1>Joe</h1>';},
                 'icon_url' => 'dashicons-store',
                 'position' => 110
-            ]
+            ],
         ];
 
 
