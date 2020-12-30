@@ -24,9 +24,7 @@ if (file_exists(dirname( __FILE__ ) . '/vendor/autoload.php')) {
     require_once dirname( __FILE__ ) . '/vendor/autoload.php';
 }
 
-define ( 'JOEFROST_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
-define ( 'JOEFROST_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define ( 'JOEFROST_PLUGIN', plugin_basename( __FILE__ ));
+
 
 function joefrost_plugin_activate() {
     Inc\Base\Activate::activate();
