@@ -6,10 +6,8 @@
 
 namespace Inc\Base;
 
-class Activate 
-{
+class Activate {
     public static function activate() {
-        echo "aaa";
         flush_rewrite_rules();
     }
 }

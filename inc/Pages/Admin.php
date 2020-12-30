@@ -6,14 +6,9 @@
 
 namespace Inc\Pages;
 
-class Admin 
-{
-    public function working() {
-        echo "working";
-    }
-    public function register() {
-        echo "aaa";
+class Admin {
 
+    public function register() {
         add_action('admin_menu',[$this,'add_admin_pages']);
     }
 
@@ -22,7 +17,7 @@ class Admin
     }
 
     public function admin_index() {
-        require_once plugin_dir_path(__FILE__) . 'templates/admin.php';
+        require_once JOEFROST_PLUGIN_PATH . 'templates/admin.php';
     }
     
 }

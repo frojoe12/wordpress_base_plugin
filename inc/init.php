@@ -14,6 +14,7 @@ final class Init {
     public static function get_services() {
         return [
             Base\Activate::class,
+            Base\Deactivate::class,
             Pages\Admin::class
         ];
     }
