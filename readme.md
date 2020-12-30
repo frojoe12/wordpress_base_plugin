@@ -1,3 +1,6 @@
+# Wordpress Plugin template with Composer, namespacing and classes
+
+
 important notes for composer usage:
 
 if changing the composer.json autoload
