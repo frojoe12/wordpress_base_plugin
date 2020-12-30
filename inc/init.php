@@ -15,6 +15,7 @@ final class Init {
         return [
             Base\Activate::class,
             Base\Deactivate::class,
+            Base\Enqueue::class,
             Pages\Admin::class
         ];
     }

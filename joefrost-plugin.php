@@ -24,6 +24,7 @@ if (file_exists(dirname( __FILE__ ) . '/vendor/autoload.php')) {
 }
 
 define ( 'JOEFROST_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
+define ( 'JOEFROST_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
 if (class_exists('Inc\\Init')) {
     Inc\Init::register_services();
@@ -39,8 +40,7 @@ class JoeFrostPlugin {
     }
 
     public function register() {
-        add_action('admin_enqueue_scripts', [$this, 'enqueue_admin']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_wp']);
+        
         add_action('admin_menu',[$this,'add_admin_pages']);
         
         add_filter('plugin_action_links_' . $this->plugin , [$this,'settings_link']);
@@ -61,16 +61,7 @@ class JoeFrostPlugin {
         register_post_type('book',[ 'public' => true, 'label' =>'Books' ]);
     }
 
-    function enqueue_admin() {
-        // enqueue all scripts
-        wp_enqueue_style('mypluginstyle', plugins_url('/assets/admin-style.css', __FILE__ ));
-        wp_enqueue_script('mypluginscript', plugins_url('/assets/admin-script.js', __FILE__ ));
-    }
-    function enqueue_wp() {
-        // enqueue all scripts
-        wp_enqueue_style('mypluginstyle', plugins_url('/assets/wp-style.css', __FILE__ ));
-        wp_enqueue_script('mypluginscript', plugins_url('/assets/wp-script.js', __FILE__ ));
-    }
+    
     public function activate() {
         require_once plugin_dir_path( __FILE__) . "inc/base/JoeFrostPluginActivate.php";
         JoeFrostPluginActivate::activate();
